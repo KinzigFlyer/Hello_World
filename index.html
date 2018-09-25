@@ -1,9 +1,122 @@
-<!doctpye html>
+<! DOCTYPE html>
 <html>
-<head>
-<title>Hello_World</title>
-</head>
-<body>
-<h1>Hello World</h1>
-</body>
+    <head>
+        <meta charset = "UTF-8">
+        <title>Testing Menues</title>
+        <style>
+            nav ul {
+                padding: 0;
+                float: left;
+            }
+            
+            nav ul.nav-right {
+                float: right;
+            }
+            
+            nav li {
+                list-style-type: none;
+                padding-right: 2px;
+                margin: 0;
+                min-width: 10em;
+            }
+            
+            nav li.active {
+                background-color: #ccffcc;
+            }
+            
+            nav>ul>li {
+                display: inline;
+                position: relative;
+            }
+            
+            nav>ul ul {
+                display: none;
+                position: absolute;
+                top: 2.5ex;
+                left: 1em;
+                border: 1px solid red;
+            }
+            
+            nav>ul.nav-right ul {
+                left: auto;
+                right: 0.5em;
+            }
+            
+            nav>ul.nav-right ul li {
+                text-align: right;
+            }
+            
+            nav::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+            
+            nav a,
+            nav a:hover,
+            nav a:active,
+            nav a:visited {
+                text-decoration: none;
+            }
+            
+            nav a:hover {
+                background-color: #fefefe;
+            }
+        </style>
+    </head>
+    <body>
+    <header>
+        <h1>My nice little application</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Main1</a></li>
+                <li>
+                    <a href="#" onclick="openMenu(this);">Main2</a>
+                    <ul>
+                        <li><a href="#">Sub2.1</a></li>
+                        <li><a href="#">Sub2.2</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav-right">
+                <li>
+                    <a href="#" onclick="openMenu(this);">User</a>
+                        <ul>
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="/Logout">Logout</a></li>
+                        </ul>
+                </li>
+                <li><a href="#" onclick="openMenu(this);">&nbsp;?&nbsp;</a>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">How To</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="body">
+        <h2>My section header</h2>
+        <p>My first paragraph</p>
+        <form>
+            <input type="selection">
+                <
+        </form>
+    </section>
+    <script>
+        function openMenu(target) {
+            var submenulist = document.querySelectorAll("nav ul ul"),
+                idx = submenulist.length - 1
+                
+            for (; idx >= 0; idx -=1) {
+                submenulist[idx].style.display = "none";
+            }
+            
+            target.parentNode.querySelector("ul").style.display = "block";
+        }
+
+    </script>
+    </body>
 </html>

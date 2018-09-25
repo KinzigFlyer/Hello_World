@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang='en' class=''>
+<head>
+<meta charset='UTF-8'>
+<!-- <style class="cp-pen-styles">-->
+<style>
+svg circle:first-of-type {
+  fill: DarkGoldenRod;
+}
+svg circle:last-of-type {
+  stroke: blue;
+  stroke-width: 2;
+}
+svg circle:nth-last-of-type(1) {
+  fill: orange;
+}
+svg polygon:only-of-type {
+  fill: DeepPink;
+}
+svg polygon:last-of-type {
+  stroke: blue;
+  stroke-width: 2;
+}
+svg rect:nth-child(2) {
+  fill: red;
+}
+svg rect:nth-of-type(3) {
+  fill: green;
+}
+svg rect:nth-last-child(1) {
+  fill: purple;
+}
+svg rect:only-child {
+  fill: lime;
+}
+svg rect:last-child {
+  stroke: yellowgreen;
+  stroke-width: 3;
+}
+svg rect:hover {
+  fill: green;
+}
+svg g > *:empty:hover {
+  stroke: purple !important;
+  stroke-width: 3;
+}
+svg g > *:not(text):hover {
+  fill: pink !important;
+}
+
+:root {
+  fill: blue;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-family: Arial;
+  color: #444;
+}
+
+section {
+  width: 450px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  margin: -200px 0 0 -225px;
+}
+
+body {
+  margin: 0;
+}
+</style>
+</head>
+<body>
+<section>
+  <p>All rendered SVG elements are styled w/ pseudo classes. :empty and :not(x) are shown on hover. Except for :target, all applicable CSS3 psuedo classes are represented. </p>
+<svg width="450" height="300">
+  <g transform="translate(5,5)">
+    <rect x="0" y="0" width="25" height="25" />
+    <rect x="0" y="40" width="25" height="25" />
+    <rect x="0" y="80" width="25" height="25" />
+    <circle cx="15" cy="132" r="13.5"/>
+    <circle cx="15" cy="170" r="13.5"/>
+    <polygon points="2,200 28,200 14,225"/>
+    <rect x="0" y="240" width="25" height="25" />
+  </g>
+  <g transform="translate(5,5)">
+    <rect x="220" y="0" width="25" height="25" />
+  </g>
+  <g transform="translate(5,5)" font-family="Verdana" font-size="16" fill="#444">
+    <text x="40" y="20" >:root</text>
+    <text x="40" y="60">:nth-child(2)</text>
+    <text x="40" y="100">:nth-of-type(3)</text>
+    <text x="40" y="140">:first-of-type</text>
+    <text x="40" y="180">:nth-last-of-type(1)</text>
+    <text x="40" y="220">:only-of-type, :last-of-type</text>
+    <text x="40" y="260">:nth-last-child(1), :last-child</text>
+    <text x="260" y="20">:only-child, :last-child</text>
+  </g>
+</svg>
+</section>
+</body>
+</html>
