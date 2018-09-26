@@ -97,6 +97,62 @@
             </ul>
         </nav>
     </header>
+    <div id="testbed">
+        <div class="snackbar">Some text some message..</div>
+        <div class="snackbar alert"><span>Some text some message..</span></div>
+    </div>
+    <style>
+    #testbed {
+        position: relative;
+        background-color: #ffffcc;
+    }
+
+
+    .snackbar {
+        box-sizing: border:box;
+        width: 250px; /* Set a default minimum width */
+        margin: 0 auto;
+        height: 5ex;
+        overflow: hidden;
+        valign: center;
+        background-color: #0a0; /* Black background color */
+        color: #fff; /* White text color */
+        line-height: 5ex;
+        text-align: center; /* Centered text */
+        border-radius: 5px; /* Rounded borders */
+        padding: 0; /* Padding */
+        /*position: absolute; /* Sit on top of the screen */
+        /*z-index: 1; /* Add a z-index if needed */
+        left: 50%; /* Center the snackbar */
+
+        /*top: auto; /* 30px from the bottom */
+        visibility: visible; /* Show the snackbar */
+        /* Add animation: Take 0.5 seconds to fade in and out the snackbar. */
+        /* However, delay the fade out process for 2.5 seconds */
+        animation: fadein 0.5s, fadeout 0.5s 5s forwards;
+    }
+
+    .snackbar.alert {
+        background-color: #f00;
+        animation: fadein 0.5s, fadeout 0.5s 10s forwards;
+    }
+
+    .snackbar span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    @keyframes fadein {
+        from {height: 0; opacity: 0;}
+        to {height: 5ex; opacity: 1;}
+    }
+
+    @keyframes fadeout {
+        from {height: 5ex; opacity: 1; }
+        to {height: 0; opacity: 0; padding: 0; margin-top: 0; margin-bottom: 0;}
+    }
+    </style>
+
     <section class="body">
         <h2>My section header</h2>
         <p>My first paragraph. With some more text.</p>
